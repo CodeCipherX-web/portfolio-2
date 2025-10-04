@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teddy Alvin — Software Developer</title>
+<meta name="description" content="Portfolio — Software developer (HTML, CSS, JS, Node.js)." />
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container" id="top">
+  <header>
+    <div class="brand">
+      <div class="profile fade-up">
+        <img src="https://i.pinimg.com/736x/99/05/5b/99055b780832511f91cccc88d2c3a49e.jpg" alt="Teddy Alvin Profile Picture" id="profilePic">
+      </div>
+      <div class="fade-up">
+        <h1>Teddy Alvin — <span class="muted">Software Developer</span></h1>
+        <p class="lead">Frontend & Node.js enthusiast — building useful tools and small apps.</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <nav class="fade-up">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="theme-toggle fade-up" id="themeToggle" title="Toggle theme">
+        <i class="fas fa-moon"></i> <span class="caps">Theme</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="card intro fade-up">
+        <h2>Hi — I'm Teddy. I build small web apps that solve everyday problems.</h2>
+        <p>I started coding in <strong>September 2024</strong>. My first project was a simple calculator. In <strong>January 2025</strong> I shipped <em>Listify</em>, a task reminder site that helped me learn DOM manipulation and local storage.</p>
+        <div class="cta">
+          <button class="btn scroll-btn" onclick="scrollToSection('projects')">See projects</button>
+          <a class="btn ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="card about-card fade-right">
+        <h3 class="caps">Quick facts</h3>
+        <p class="muted">Role: <strong>Software Developer</strong></p>
+        <p class="muted">Location: <strong>Kenya</strong></p>
+        <div class="timeline-container">
+          <div class="caps">Timeline</div>
+          <ul class="timeline">
+            <li class="fade-up"><strong>Sep 2024</strong> — Started coding (Calculator)</li>
+            <li class="fade-up"><strong>Jan 2025</strong> — Built Listify</li>
+            <li class="fade-up"><strong>Now</strong> — Learning Node.js</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects">
+      <h2 class="caps fade-up">Projects</h2>
+      <div class="projects">
+        <!-- Simple Calculator -->
+        <article class="project card fade-left">
+          <div class="thumb">Calculator — (Sep 2024)</div>
+          <div class="meta">
+            <h3>Simple Calculator</h3>
+            <p>A tiny calculator built with vanilla JavaScript to practice DOM updates and event handling. Great first step to learn JS fundamentals.</p>
+            <div class="links"><a href="#" class="muted">View source</a></div>
+          </div>
+        </article>
+
+        <!-- Listify -->
+        <article class="project card fade-right">
+          <div class="thumb">Listify — (Jan 2025)</div>
+          <div class="meta">
+            <h3>Listify — Task Reminder</h3>
+            <p>Task reminder app that saves lists to localStorage, supports adding, completing, and deleting tasks. Built to practice state management without a framework.</p>
+            <div class="links">
+              <a href="https://codecipherx-web.github.io/to-do-app/Homepage.html" target="_blank" rel="noopener noreferrer" class="muted">Live demo</a> | 
+              <a href="#" class="muted">View source</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <h2 class="caps fade-up">Skills</h2>
+      <div class="card fade-up skills-card">
+        <div class="skills">
+          <span class="skill fade-up"><i class="fab fa-html5"></i> HTML</span>
+          <span class="skill fade-up"><i class="fab fa-css3-alt"></i> CSS</span>
+          <span class="skill fade-up"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="skill fade-up"><i class="fab fa-node"></i> Node.js</span>
+        </div>
+        <p class="muted">Comfortable building responsive, accessible, and maintainable frontends. Currently exploring backend basics with Node.js.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="caps fade-up">Contact</h2>
+      <div class="card fade-up contact-card">
+        <form id="contactForm" onsubmit="return sendMail(event)">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Email address" required />
+          <textarea id="message" placeholder="Write your message..." required></textarea>
+          <div class="form-actions">
+            <button class="btn" type="submit">Send</button>
+            <button class="btn ghost" type="button" onclick="copyEmail()">Copy email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+<footer class="fade-up visible">
+  <p>Built with ❤️ — HTML • CSS • JS • Node.js</p>
+  <p style="margin-top:6px;font-size:13px">
+    Replace <code>profile.jpg</code> in the same folder with your profile image.
+    Update project links where the demo/source placeholders are.
+  </p>
+</footer>
+
+</div>
+
+<!-- Welcome Popup -->
+<div id="welcomePopup">
+  <h2>👋 Welcome!</h2>
+  <p>Thanks for visiting my portfolio. Enjoy exploring my projects and skills!</p>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
