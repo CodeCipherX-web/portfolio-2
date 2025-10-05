@@ -347,23 +347,34 @@ footer {
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #dc2626, #b91c1c); }
 * { scrollbar-width: thin; scrollbar-color: #ef4444 var(--bg); }
 
-/* ================================
-   📌 BURGER MENU STYLING
-=================================== */
+/* ============================
+   📱 BURGER MENU STYLE
+============================ */
 #burgerMenu {
   display: none;
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   color: inherit;
   margin-right: 10px;
 }
 
-/* Desktop nav by default */
+/* Rotate icon when active */
+#burgerMenu.active i {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+#burgerMenu i {
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Default nav style */
 header nav {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 header nav a {
@@ -372,36 +383,32 @@ header nav a {
   font-weight: 500;
 }
 
-/* ============ MOBILE VIEW ============ */
+/* 📱 Mobile view */
 @media (max-width: 768px) {
   #burgerMenu {
-    display: block; /* show burger icon */
-  }
-
-  header .header-actions {
-    display: flex;
-    align-items: center;
+    display: block;
+    font-size: 28px;
   }
 
   header nav {
-    display: none;   /* hide nav initially */
+    display: none;
     flex-direction: column;
     background: var(--bg, #fff);
     position: absolute;
     top: 70px;
     right: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     padding: 1rem;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 100;
   }
 
   header nav.show {
-    display: flex;   /* show when burger is clicked */
+    display: flex;
   }
 
   header nav a {
-    padding: 0.5rem 0;
     display: block;
+    padding: 0.5rem 0;
   }
 }
