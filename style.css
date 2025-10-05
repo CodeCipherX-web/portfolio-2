@@ -347,59 +347,61 @@ footer {
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #dc2626, #b91c1c); }
 * { scrollbar-width: thin; scrollbar-color: #ef4444 var(--bg); }
 
-/* ================== Responsive Navigation ================== */
+/* ================================
+   📌 BURGER MENU STYLING
+=================================== */
 #burgerMenu {
   display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: inherit;
+  margin-right: 10px;
 }
 
-/* Show hamburger menu on smaller screens */
+/* Desktop nav by default */
+header nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* ============ MOBILE VIEW ============ */
 @media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
-
   #burgerMenu {
-    display: block;
-    background: linear-gradient(90deg,#ef4444,#dc2626);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 20px;
-    padding: 6px 12px;
-    cursor: pointer;
+    display: block; /* show burger icon */
   }
 
-  nav {
-    display: none;
-    width: 100%;
-    background: var(--card);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border-radius: 12px;
-    margin-top: 10px;
-    flex-direction: column;
-    padding: 10px 0;
-    transition: max-height 0.3s ease;
-  }
-
-  nav.show {
+  header .header-actions {
     display: flex;
+    align-items: center;
   }
 
-  nav a {
-    padding: 10px 16px;
-    margin: 0;
+  header nav {
+    display: none;   /* hide nav initially */
+    flex-direction: column;
+    background: var(--bg, #fff);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 100;
+  }
+
+  header nav.show {
+    display: flex;   /* show when burger is clicked */
+  }
+
+  header nav a {
+    padding: 0.5rem 0;
     display: block;
-    text-align: center;
-    font-size: 15px;
-    color: var(--text);
-    border-top: 1px solid rgba(0,0,0,0.05);
-  }
-
-  [data-theme="dark"] nav a {
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  nav a:first-child {
-    border-top: none;
   }
 }
