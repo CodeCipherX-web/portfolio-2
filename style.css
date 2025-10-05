@@ -346,3 +346,60 @@ footer {
 ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #ef4444, #dc2626); border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #dc2626, #b91c1c); }
 * { scrollbar-width: thin; scrollbar-color: #ef4444 var(--bg); }
+
+/* ================== Responsive Navigation ================== */
+#burgerMenu {
+  display: none;
+}
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  #burgerMenu {
+    display: block;
+    background: linear-gradient(90deg,#ef4444,#dc2626);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    margin-top: 10px;
+    flex-direction: column;
+    padding: 10px 0;
+    transition: max-height 0.3s ease;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 16px;
+    margin: 0;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: var(--text);
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  [data-theme="dark"] nav a {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  nav a:first-child {
+    border-top: none;
+  }
+}
