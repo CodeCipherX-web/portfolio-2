@@ -138,14 +138,34 @@
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const nav = header.querySelector("nav");
+
+    // ✅ Create burger button
     const burger = document.createElement("button");
     burger.id = "burgerMenu";
-    burger.innerHTML = '<i class="fas fa-bars"></i>';  // 👈 Font Awesome icon
-    document.querySelector("header").insertBefore(burger, document.querySelector("nav"));
+    burger.className = "burger";
+    burger.innerHTML = '<i class="fas fa-bars"></i>';
+    header.insertBefore(burger, nav);
 
+    // ✅ Toggle menu
     burger.addEventListener("click", () => {
-      document.querySelector("nav").classList.toggle("show");
+      nav.classList.toggle("show");
       burger.classList.toggle("active");
+
+      const icon = burger.querySelector("i");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+
+    // ✅ Close menu when a nav link is clicked (mobile)
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("show");
+        burger.classList.remove("active");
+        burger.querySelector("i").classList.add("fa-bars");
+        burger.querySelector("i").classList.remove("fa-times");
+      });
     });
   });
 </script>
